@@ -9,7 +9,7 @@ $(document).ready(function () {
   let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
   let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
-  // Inicializar autocomplete
+  // Inicializar autocomplete con jquery
   function initAutocomplete() {
     $contactInput.autocomplete({
       source: contacts,
@@ -26,11 +26,13 @@ $(document).ready(function () {
     const selectedContact = $contactInput.val();
     const amount = Number($transferAmount.val());
     let balance = Number(localStorage.getItem("balance")) || 0;
-
+    // Validación de contacto
     if (!contacts.includes(selectedContact)) {
       alert("Debes seleccionar un contacto válido");
       return;
     }
+
+    // Validación de saldo
 
     if (amount > balance) {
       alert("Saldo insuficiente");

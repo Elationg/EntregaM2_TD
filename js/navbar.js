@@ -1,38 +1,38 @@
-// 1. Obtener estado de sesión
+// Obtiene el estado de la sesión
 const isLoggedIn = localStorage.getItem("isLoggedIn");
 const userName = localStorage.getItem("userName");
 
-// 2. Elementos del navbar
+// Elementos de la barra de navegación
 const navLogin = document.getElementById("nav-login");
 const navRegister = document.getElementById("nav-register");
 const navUser = document.getElementById("nav-user");
 const userGreeting = document.getElementById("user-greeting");
 const logoutBtn = document.getElementById("btn-logout");
 
-// 3. Links de dinero
+// Links de sub-menu dinero
 const linkTransactions = document.getElementById("link-transactions");
 const linkSendMoney = document.getElementById("link-sendmoney");
 const linkDeposit = document.getElementById("link-deposit");
 
-// 4. Si el usuario está logueado
+// Usuario logueado
 if (isLoggedIn === "true" && userName) {
-  // Ocultar login y registro
+  // Oculta login y registro de la barra de navegación
   navLogin.classList.add("d-none");
   navRegister.classList.add("d-none");
 
-  // Mostrar bloque usuario
+  // Muestra el bloque usuario
   navUser.classList.remove("d-none");
 
-  // Mostrar saludo
+  // Muestra el saludo 
   userGreeting.innerText = `Hola, ${userName}`;
 
-  // Activar links reales
+  // Activa los links ahora NO restringidos a "Dinero"
   linkTransactions.href = "/transactions.html";
   linkSendMoney.href = "/sendmoney.html";
   linkDeposit.href = "/deposit.html";
 } else {
 
-  // 5. Estado NO LOGUEADO
+  // Usuario no logueado
   navLogin.classList.remove("d-none");
   navRegister.classList.remove("d-none");
 
@@ -44,15 +44,8 @@ if (isLoggedIn === "true" && userName) {
   linkDeposit.href = "/login.html";
 }
 
-// 6. Logout
+// Logout
 logoutBtn?.addEventListener("click", () => {
   localStorage.clear();
-  window.location.href = "/landing.html";
+  window.location.href = "/index.html";
 });
-
-// // 5. Logout
-// logoutBtn?.addEventListener("click", () => {
-//   localStorage.removeItem("isLoggedIn");
-//   localStorage.removeItem("userName");
-//   window.location.href = "/landing.html";
-// });

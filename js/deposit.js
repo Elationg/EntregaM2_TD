@@ -1,6 +1,8 @@
 const form = document.getElementById("depositForm");
 const amountInput = document.getElementById("depositAmount");
 
+//Envío de formulario de Depósito
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -11,6 +13,8 @@ form.addEventListener("submit", (e) => {
   const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
   const newBalance = balance + amount;
+
+// Actualización en transacciones
 
   transactions.push({
     date: new Date().toLocaleDateString(),

@@ -9,12 +9,12 @@ loginForm.addEventListener("submit", (e) => {
   const password = passwordInput.value.trim();
 
   if (email === "admin@piggywallet.com" && password === "admin1234") {
-    // Guardamos sesión
+    // Guarda la sesión actual
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("userName", "Admin");
 
-    // Redirigimos
-    window.location.href = "landing.html";
+    // Al desloguear, nos redirige a index.html
+    window.location.href = "index.html";
   } else {
     alert("Usuario o contraseña incorrectos");
   }

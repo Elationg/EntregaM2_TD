@@ -1,4 +1,4 @@
-// 1. Lista de Paises
+// Lista de Paises
 
 const countries = [
   { code: "CL", name: "Chile" },
@@ -185,7 +185,7 @@ const countries = [
   { code: "ZW", name: "Zimbabue" }
 ];
 
-// 2. Selector de Países
+// Selector de Países sin J Query
 
 document.addEventListener("DOMContentLoaded", () => {
   const select = document.getElementById("countrySelect");
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// 3. Validación de Contraseñas
+// Validador de Contraseñas
 
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
@@ -224,7 +224,7 @@ function validatePasswords() {
 password.addEventListener("input", validatePasswords);
 confirmPassword.addEventListener("input", validatePasswords);
 
-// 4 . Envío de Formulario
+// Envío de Formulario de Registro
 
 const form = document.getElementById("registerForm");
 
